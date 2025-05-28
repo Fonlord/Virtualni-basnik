@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="cs"><!DOCTYPE html>
 <html lang="cs"><!DOCTYPE html><!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -87,6 +86,12 @@
       border: 2px solid #aa8052;
       border-radius: 8px;
     }
+    audio {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 1rem auto;
+    }
     blockquote {
       font-style: italic;
       margin: 1rem 0;
@@ -106,6 +111,7 @@
     <a href="#objednavka">Objednat</a>
     <a href="#bajky">Báseň na přání</a>
     <a href="#ukazka">Ukázka</a>
+    <a href="#hudba">Hudební ukázky</a>
     <a href="#autor">O autorovi</a>
     <a href="#kontakt">Kontakt</a>
   </nav>
@@ -117,7 +123,7 @@
 
   <section id="objednavka">
     <h2>Objednej si e-knihu</h2>
-    <p>Elektronická verze ve formátu PDF nebo EPUB. Cena:199 Kč.</p>
+    <p>Elektronická verze ve formátu PDF nebo EPUB. Cena: 199 Kč.</p>
     <a href="mailto:stonesilver@seznam.cz?subject=Objednávka e-knihy" class="button">Objednat přes e-mail</a>
   </section>
 
@@ -129,22 +135,43 @@
 
   <section id="ukazka">
     <h2>Ukázka z knihy</h2>
-      <p><em>Vzpomínky</em></p>
+    <p><em>Vzpomínky</em></p>
     <blockquote>
-     Hladina modrá se kamenem rozčeří,<br>
+      Hladina modrá se kamenem rozčeří,<br>
       jak srdce naše úderem Lásky.<br>
-    Tůň kámen pohltí,srdce se uklidní,<br>
-      na obou zůstanou jen chvíli vrásky.<br>
-    Čas všechno zahojí,zacelí rány,<br>
-     jen někde hluboko vzpomínky zbudou.<br>
-    Když jednou vytanou,otevřu brány,<br>
-     pak sami odletí jak černý mrak.<br>
-   Jako když vyplašíš divoké vrány,<br>
-     však jednou vrátí se,<br>
-     jako ten pták… <br>
-    
+      Tůň kámen pohltí,srdce se uklidní,<br>
+      na obou zůstanou jen chvíli vrásky.<br><br>
+      Čas všechno zahojí,zacelí rány,<br>
+      jen někde hluboko vzpomínky zbudou.<br>
+      Když jednou vytanou,otevřu brány,<br>
+      pak sami odletí jak černý mrak.<br><br>
+      Jako když vyplašíš divoké vrány,<br>
+      však jednou vrátí se,<br>
+      jako ten pták…
     </blockquote>
     <img src="obalka.png" alt="Obálka e-knihy" class="book-cover">
+  </section>
+
+  <section id="hudba">
+    <h2>Hudební ukázky</h2>
+    <p>Zde najdeš ukázky zhudebněných textů z knihy:</p>
+    <h3>Bludička</h3>
+    <audio controls>
+      <source src="bludicka.mp3" type="audio/mpeg">
+      Tvůj prohlížeč nepodporuje přehrávání audia.
+    </audio>
+
+    <h3>Piráti</h3>
+    <audio controls>
+      <source src="pirati.mp3" type="audio/mpeg">
+      Tvůj prohlížeč nepodporuje přehrávání audia.
+    </audio>
+
+    <h3>Můry</h3>
+    <audio controls>
+      <source src="mury.mp3" type="audio/mpeg">
+      Tvůj prohlížeč nepodporuje přehrávání audia.
+    </audio>
   </section>
 
   <section id="autor">
@@ -164,10 +191,8 @@
   </footer>
 </body>
 </html>
-  
 
-        
-    
+
     
   
 
