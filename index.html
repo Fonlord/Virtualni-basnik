@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="cs"><!DOCTYPE html><!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
@@ -98,6 +97,19 @@
       padding-left: 1rem;
       border-left: 3px solid #aa8052;
     }
+    .buy-button {
+      background-color: #8a4b28;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+    .buy-button:hover {
+      background-color: #a85f3a;
+    }
   </style>
 </head>
 <body>
@@ -124,12 +136,14 @@
   <section id="objednavka">
     <h2>Objednej si e-knihu</h2>
     <p>Elektronická verze ve formátu PDF nebo EPUB. Cena: 199 Kč.</p>
+    <a href="https://www.paypal.com/paypalme/fonlord/199" target="_blank" class="buy-button">Koupit přes PayPal</a>
+    <br>
     <a href="mailto:stonesilver@seznam.cz?subject=Objednávka e-knihy" class="button">Objednat přes e-mail</a>
   </section>
 
   <section id="bajky">
     <h2>Báseň na přání</h2>
-    <p>Chceš básničku, nebo text k písni, jako dárek, přání nebo osobní vyznání? Napiš mi téma, náladu nebo jméno a já ti ji vytvořím na míru.</p>
+    <p>Chceš básničku nebo text  písni jako dárek, přání nebo osobní vyznání? Napiš mi téma, náladu nebo jméno a já ti ji vytvořím na míru.</p>
     <a href="mailto:stonesilver@seznam.cz?subject=Báseň na přání" class="button">Objednat básničku</a>
   </section>
 
@@ -156,18 +170,21 @@
     <h2>Hudební ukázky</h2>
     <p>Zde najdeš ukázky zhudebněných textů z knihy:</p>
     <h3>Bludička</h3>
+    <p><em>Úvodní báseň celé knížky a jedna z nejstarších, napsaná v raném období tvorby.</em></p>
     <audio controls>
       <source src="bludicka.mp3" type="audio/mpeg">
       Tvůj prohlížeč nepodporuje přehrávání audia.
     </audio>
 
     <h3>Piráti</h3>
+    <p><em>Tato skladba vznikla během mého působení v metalové kapele Silverstone.</em></p>
     <audio controls>
       <source src="pirati.mp3" type="audio/mpeg">
       Tvůj prohlížeč nepodporuje přehrávání audia.
     </audio>
 
     <h3>Můry</h3>
+    <p><em>Jedna z nejnovějších skladeb, pochází z projektu kapely Moohra.</em></p>
     <audio controls>
       <source src="mury.mp3" type="audio/mpeg">
       Tvůj prohlížeč nepodporuje přehrávání audia.
@@ -191,9 +208,3 @@
   </footer>
 </body>
 </html>
-
-
-    
-  
-
-  
