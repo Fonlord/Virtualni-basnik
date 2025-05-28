@@ -110,101 +110,67 @@
     .buy-button:hover {
       background-color: #a85f3a;
     }
+    .spotify-embed {
+      width: 100%;
+      max-width: 600px;
+      height: 152px;
+      border: none;
+      display: block;
+      margin: 1.5rem auto;
+    }
+    .lyrics-button {
+      background-color: #aa8052;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem auto;
+      display: block;
+      width: fit-content;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .lyrics-button:hover {
+      background-color: #c99b65;
+    }
+    .lyrics {
+      display: none;
+      margin-top: 1rem;
+      background-color: #f5e6d0;
+      padding: 1rem;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
   </style>
+  <script>
+    function toggleLyrics(id) {
+      const el = document.getElementById(id);
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
+      }
+    }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Život je jako pocukrovaný citron</h1>
-    <p>Básnická e-kniha o lásce, bolesti a všední magii</p>
-  </header>
-
-  <nav>
-    <a href="#kniha">O knize</a>
-    <a href="#objednavka">Objednat</a>
-    <a href="#bajky">Báseň na přání</a>
-    <a href="#ukazka">Ukázka</a>
-    <a href="#hudba">Hudební ukázky</a>
-    <a href="#autor">O autorovi</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
-
-  <section id="kniha">
-    <h2>O e-knize</h2>
-    <p>Tato sbírka vznikla jako osobní zpověď plná poezie, která mísí něhu, ironii i hořkosladkou realitu. Ideální čtení pro ty, kdo hledají hloubku i úsměv mezi řádky.</p>
-  </section>
-
-  <section id="objednavka">
-    <h2>Objednej si e-knihu</h2>
-    <p>Elektronická verze ve formátu PDF nebo EPUB. Cena: 199 Kč.</p>
-    <a href="https://www.paypal.com/paypalme/fonlord/199" target="_blank" class="buy-button">Koupit přes PayPal</a>
-    <br>
-    <a href="mailto:stonesilver@seznam.cz?subject=Objednávka e-knihy" class="button">Objednat přes e-mail</a>
-  </section>
-
-  <section id="bajky">
-    <h2>Báseň na přání</h2>
-    <p>Chceš básničku nebo text  písni jako dárek, přání nebo osobní vyznání? Napiš mi téma, náladu nebo jméno a já ti ji vytvořím na míru.</p>
-    <a href="mailto:stonesilver@seznam.cz?subject=Báseň na přání" class="button">Objednat básničku</a>
-  </section>
-
-  <section id="ukazka">
-    <h2>Ukázka z knihy</h2>
-    <p><em>Vzpomínky</em></p>
-    <blockquote>
-      Hladina modrá se kamenem rozčeří,<br>
-      jak srdce naše úderem Lásky.<br>
-      Tůň kámen pohltí,srdce se uklidní,<br>
-      na obou zůstanou jen chvíli vrásky.<br><br>
-      Čas všechno zahojí,zacelí rány,<br>
-      jen někde hluboko vzpomínky zbudou.<br>
-      Když jednou vytanou,otevřu brány,<br>
-      pak sami odletí jak černý mrak.<br><br>
-      Jako když vyplašíš divoké vrány,<br>
-      však jednou vrátí se,<br>
-      jako ten pták…
-    </blockquote>
-    <img src="obalka.png" alt="Obálka e-knihy" class="book-cover">
-  </section>
-
   <section id="hudba">
     <h2>Hudební ukázky</h2>
     <p>Zde najdeš ukázky zhudebněných textů z knihy:</p>
+
     <h3>Bludička</h3>
     <p><em>Úvodní báseň celé knížky a jedna z nejstarších, napsaná v raném období tvorby.</em></p>
-    <audio controls>
-      <source src="bludicka.mp3" type="audio/mpeg">
-      Tvůj prohlížeč nepodporuje přehrávání audia.
-    </audio>
+    <audio controls src="bludicka.mp3"></audio>
 
     <h3>Piráti</h3>
-    <p><em>Tato skladba vznikla během mého působení v metalové kapele Silverstone.</em></p>
-    <audio controls>
-      <source src="pirati.mp3" type="audio/mpeg">
-      Tvůj prohlížeč nepodporuje přehrávání audia.
-    </audio>
+    <p><em>Text pochází z období mého působení v metalové kapele Silverstone.</em></p>
+    <audio controls src="pirati.mp3"></audio>
 
     <h3>Můry</h3>
-    <p><em>Jedna z nejnovějších skladeb, pochází z projektu kapely Moohra.</em></p>
-    <audio controls>
-      <source src="mury.mp3" type="audio/mpeg">
-      Tvůj prohlížeč nepodporuje přehrávání audia.
-    </audio>
-  </section>
+    <p><em>Skladba z poslední doby, vznikla v rámci projektu kapely Moohra.</em></p>
+    <audio controls src="mury.mp3"></audio>
 
-  <section id="autor">
-    <h2>O autorovi</h2>
-    <p>Jmenuji se Zdeněk Žďárský, vystupuji pod pseudonymem FonLord. Jsem básník, který rád kombinuje realitu se snem. Tvořím ze života, radostí i pádů. Moje e-kniha je výběrem toho nejupřímnějšího, co jsem kdy napsal.</p>
-    <img src="foto1.JPG" alt="Autor Zdeněk Žďárský" class="author-photo">
+    <p><strong>Máte zájem o básně nebo texty na přání?</strong> Objednat je lze e-mailem na adrese <a href="mailto:stonesilver@seznam.cz">stonesilver@seznam.cz</a>.</p>
   </section>
-
-  <section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>E-mail: <a href="mailto:stonesilver@seznam.cz">stonesilver@seznam.cz</a></p>
-    <p>Sleduj mě i na sociálních sítích (doplním později).</p>
-  </section>
-
-  <footer>
-    &copy; 2025 Zdeněk Žďárský – FonLord – Všechna práva vyhrazena
-  </footer>
 </body>
 </html>
