@@ -296,26 +296,19 @@ jako ten pták…<br>
   </form>
 
 
-      <label for="zprava">Popiš svou představu nebo vzkaz:</label>
-      <textarea id="zprava" name="zprava" rows="5"></textarea>
+   <h3>Nebo mi rovnou napište vzkaz:</h3>
+<form action="https://formspree.io/f/mwpogdnv" method="POST">
+  <label for="jmeno-vzkaz">Jméno:</label>
+  <input type="text" id="jmeno-vzkaz" name="name" required>
 
-      <button type="submit" class="button">Odeslat</button>
-    </form>
+  <label for="email-vzkaz">Email:</label>
+  <input type="email" id="email-vzkaz" name="email" required>
 
-    <script>
-      function odeslatEmail() {
-        const jmeno = document.getElementById('jmeno').value;
-        const email = document.getElementById('email').value;
-        const typ = document.getElementById('typ').value;
-        const zprava = document.getElementById('zprava').value;
+  <label for="zprava-vzkaz">Vzkaz:</label>
+  <textarea id="zprava-vzkaz" name="message" rows="4" required></textarea>
 
-        const subject = encodeURIComponent("Objednávka – " + typ);
-        const body = encodeURIComponent("Jméno: " + jmeno + "\nE-mail: " + email + "\n\nTyp objednávky: " + typ + "\n\nZpráva:\n" + zprava);
-
-        window.location.href = "mailto:stonesilver@seznam.cz?subject=" + subject + "&body=" + body;
-      }
-    </script>
-  </section>
+  <button type="submit" class="button">Odeslat vzkaz</button>
+</form>
 
   <footer>
     &copy; 2025 Zdeněk Žďárský – FonLord – Všechna práva vyhrazena
