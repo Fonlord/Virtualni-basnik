@@ -269,9 +269,46 @@ jako ten pták…<br>
     <img src="foto1.JPG" alt="Autor Zdeněk Žďárský" class="author-photo">
   </section>
 
-  <section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Pokud máš dotazy nebo zájem o spolupráci, napiš mi na <a href="mailto:stonesilver@seznam.cz">stonesilver@seznam.cz</a>
+ <section id="kontakt">
+  <h2>Kontakt</h2>
+  <p>Pokud máš dotazy nebo zájem o spolupráci, napiš mi na:</p>
+  <p>
+    <strong id="email">stonesilver@seznam.cz</strong>
+    <button onclick="copyEmail()" class="button">Kopírovat e-mail</button>
+    <button onclick="toggleQR()" class="button">Zobrazit QR kód</button>
+  </p>
+  <div id="qr-container" style="display: none; margin-top: 1rem;"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script>
+    function copyEmail() {
+      const email = document.getElementById('email').textContent;
+      navigator.clipboard.writeText(email)
+        .then(() => alert("E-mail zkopírován: " + email))
+        .catch(() => alert("Nepodařilo se zkopírovat e-mail."));
+    }
+
+    function toggleQR() {
+      const qrContainer = document.getElementById('qr-container');
+      const email = document.getElementById('email').textContent;
+
+      if (qrContainer.style.display === 'none') {
+        qrContainer.style.display = 'block';
+        qrContainer.innerHTML = '';
+        QRCode.toCanvas(email, { width: 150 }, function (err, canvas) {
+          if (err) {
+            qrContainer.innerText = "Nepodařilo se vygenerovat QR kód.";
+            return;
+          }
+          qrContainer.appendChild(canvas);
+        });
+      } else {
+        qrContainer.style.display = 'none';
+      }
+    }
+  </script>
+</section>
+
   
  <section id="objednavka">
   <h2>Objednávka</h2>
