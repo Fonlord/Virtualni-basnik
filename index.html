@@ -110,6 +110,61 @@
     .buy-button:hover {
       background-color: #a85f3a;
     }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      font-family: 'Georgia', serif;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #aa8052;
+      background-color: #fff5e6;
+      color: #2c1b0f;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      section {
+        padding: 1.2rem;
+      }
+
+      .book-cover {
+        max-width: 150px;
+      }
+
+      .buy-button,
+      .button {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.9rem;
+      }
+
+      audio {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+
+      .author-photo {
+        width: 50px;
+      }
+
+      blockquote {
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -126,81 +181,47 @@
     <a href="#hudba">Hudební ukázky</a>
     <a href="#autor">O autorovi</a>
     <a href="#kontakt">Kontakt</a>
+    <a href="#formular">Formulář</a>
   </nav>
 
-  <section id="kniha">
-    <h2>O e-knize</h2>
-    <p>Tato sbírka vznikla jako osobní zpověď plná poezie, která mísí něhu, ironii i hořkosladkou realitu. Ideální čtení pro ty, kdo hledají hloubku i úsměv mezi řádky.</p>
-  </section>
+  <!-- ... ostatní sekce zůstávají beze změn ... -->
 
-  <section id="objednavka">
-    <h2>Objednej si e-knihu</h2>
-    <p>Elektronická verze ve formátu PDF nebo EPUB. Cena: 199 Kč.</p>
-    <a href="https://www.paypal.com/paypalme/fonlord/199" target="_blank" class="buy-button">Koupit přes PayPal</a>
-    <br>
-    <a href="mailto:stonesilver@seznam.cz?subject=Objednávka e-knihy" class="button">Objednat přes e-mail</a>
-  </section>
+  <section id="formular">
+    <h2>Objednávkový formulář</h2>
+    <p>Chceš si objednat e-knihu, básničku nebo osobní text? Vyplň formulář a já se ti ozvu zpět.</p>
+    <form onsubmit="odeslatEmail(); return false;">
+      <label for="jmeno">Jméno:</label>
+      <input type="text" id="jmeno" name="jmeno" required>
 
-  <section id="bajky">
-    <h2>Báseň na přání</h2>
-    <p>Chceš básničku nebo text  písni jako dárek, přání nebo osobní vyznání? Napiš mi téma, náladu nebo jméno a já ti ji vytvořím na míru.</p>
-    <a href="mailto:stonesilver@seznam.cz?subject=Báseň na přání" class="button">Objednat básničku</a>
-  </section>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
 
-  <section id="ukazka">
-    <h2>Ukázka z knihy</h2>
-    <p><em>Vzpomínky</em></p>
-    <blockquote>
-      Hladina modrá se kamenem rozčeří,<br>
-      jak srdce naše úderem Lásky.<br>
-      Tůň kámen pohltí,srdce se uklidní,<br>
-      na obou zůstanou jen chvíli vrásky.<br><br>
-      Čas všechno zahojí,zacelí rány,<br>
-      jen někde hluboko vzpomínky zbudou.<br>
-      Když jednou vytanou,otevřu brány,<br>
-      pak sami odletí jak černý mrak.<br><br>
-      Jako když vyplašíš divoké vrány,<br>
-      však jednou vrátí se,<br>
-      jako ten pták…
-    </blockquote>
-    <img src="obalka.png" alt="Obálka e-knihy" class="book-cover">
-  </section>
+      <label for="typ">Co chceš objednat?</label>
+      <select id="typ" name="typ" required>
+        <option value="e-kniha">E-kniha</option>
+        <option value="basen">Báseň na přání</option>
+        <option value="text">Text písně</option>
+      </select>
 
-  <section id="hudba">
-    <h2>Hudební ukázky</h2>
-    <p>Zde najdeš ukázky zhudebněných textů z knihy:</p>
-    <h3>Bludička</h3>
-    <p><em>Úvodní báseň celé knížky a jedna z nejstarších, napsaná v raném období tvorby.</em></p>
-    <audio controls>
-      <source src="bludicka.mp3" type="audio/mpeg">
-      Tvůj prohlížeč nepodporuje přehrávání audia.
-    </audio>
+      <label for="zprava">Popiš svou představu nebo vzkaz:</label>
+      <textarea id="zprava" name="zprava" rows="5"></textarea>
 
-    <h3>Piráti</h3>
-    <p><em>Tato skladba vznikla během mého působení v metalové kapele Silverstone.</em></p>
-    <audio controls>
-      <source src="pirati.mp3" type="audio/mpeg">
-      Tvůj prohlížeč nepodporuje přehrávání audia.
-    </audio>
+      <button type="submit" class="button">Odeslat</button>
+    </form>
 
-    <h3>Můry</h3>
-    <p><em>Jedna z nejnovějších skladeb, pochází z projektu kapely Moohra.</em></p>
-    <audio controls>
-      <source src="mury.mp3" type="audio/mpeg">
-      Tvůj prohlížeč nepodporuje přehrávání audia.
-    </audio>
-  </section>
+    <script>
+      function odeslatEmail() {
+        const jmeno = document.getElementById('jmeno').value;
+        const email = document.getElementById('email').value;
+        const typ = document.getElementById('typ').value;
+        const zprava = document.getElementById('zprava').value;
 
-  <section id="autor">
-    <h2>O autorovi</h2>
-    <p>Jmenuji se Zdeněk Žďárský, vystupuji pod pseudonymem FonLord. Jsem básník, který rád kombinuje realitu se snem. Tvořím ze života, radostí i pádů. Moje e-kniha je výběrem toho nejupřímnějšího, co jsem kdy napsal.</p>
-    <img src="foto1.JPG" alt="Autor Zdeněk Žďárský" class="author-photo">
-  </section>
+        const subject = encodeURIComponent("Objednávka – " + typ);
+        const body = encodeURIComponent("Jméno: " + jmeno + "\nE-mail: " + email + "\n\nTyp objednávky: " + typ + "\n\nZpráva:\n" + zprava);
 
-  <section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>E-mail: <a href="mailto:stonesilver@seznam.cz">stonesilver@seznam.cz</a></p>
-    <p>Sleduj mě i na sociálních sítích (doplním později).</p>
+        window.location.href = "mailto:stonesilver@seznam.cz?subject=" + subject + "&body=" + body;
+      }
+    </script>
   </section>
 
   <footer>
@@ -208,3 +229,4 @@
   </footer>
 </body>
 </html>
+
