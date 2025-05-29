@@ -185,8 +185,7 @@
     <a href="#formular">Formulář</a>
   </nav>
 
-
- <section id="kniha">
+  <section id="kniha">
     <h2>O knize</h2>
     <p>„Život je jako pocukrovaný citron“ je sbírka, která spojuje jemnost i syrovost života. Každý verš odráží zkušenosti, vzpomínky a emoce. Nejde o pouhou poezii – jde o osobní zpověď, otevřenou knihu lidské duše.</p>
     <img src="obalka.png" alt="Obálka knihy" class="book-cover">
@@ -206,9 +205,12 @@
     <a href="mailto:stonesilver@seznam.cz?subject=Báseň na přání" class="button">Objednat básničku</a>
   </section>
   
-  <section id="uvod">
-    <h2>Báseň – Vzpomínky</h2>
- Hladina modrá se kamenem rozčeří,<br>
+  <section id="ukazka">
+    <h2>Ukázka z básně Vzpomínky</h2>
+    <blockquote>
+ <br>
+      
+Hladina modrá se kamenem rozčeří,<br>
 jak srdce naše úderem Lásky.<br>
 Tůň kámen pohltí,srdce se uklidní,<br>
 na obou zůstanou jen chvíli vrásky.<br>
@@ -248,45 +250,53 @@ jako ten pták…<br>
   </section>
 
 
+ <section id="autor">
+    <h2>O autorovi</h2>
+    <p>Jmenuji se Zdeněk Žďárský, vystupuji pod pseudonymem FonLord. Jsem básník, který rád kombinuje realitu se snem. Tvořím ze života, radostí i pádů. Moje e-kniha je výběrem toho nejupřímnějšího, co jsem kdy napsal.</p>
+    <img src="foto1.JPG" alt="Autor Zdeněk Žďárský" class="author-photo">
+  </section>
 
-  <section id="objednavka">
-    <h2>Objednávka</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <label for="name">Jméno a příjmení:</label>
-      <input type="text" id="name" name="name" required>
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Pokud máš dotazy nebo zájem o spolupráci, napiš mi na <a href="mailto:stonesilver@seznam.cz">stonesilver@seznam.cz</a>.</p>
+  </section>
 
-      <label for="email">Email:</label>
+  <section id="formular">
+    <h2>Objednávkový formulář</h2>
+    <p>Chceš si objednat e-knihu, básničku nebo osobní text? Vyplň formulář a já se ti ozvu zpět.</p>
+    <form onsubmit="odeslatEmail(); return false;">
+      <label for="jmeno">Jméno:</label>
+      <input type="text" id="jmeno" name="jmeno" required>
+
+      <label for="email">E-mail:</label>
       <input type="email" id="email" name="email" required>
 
-      <label for="typ">Co si přejete?</label>
-      <select id="typ" name="typ">
-        <option value="kniha">Kniha</option>
-        <option value="báseň">Báseň na přání</option>
-        <option value="text">Text k hudbě</option>
+      <label for="typ">Co chceš objednat?</label>
+      <select id="typ" name="typ" required>
+        <option value="e-kniha">E-kniha</option>
+        <option value="basen">Báseň na přání</option>
+        <option value="text">Text písně</option>
       </select>
 
-      <label for="poznamka">Poznámka:</label>
-      <textarea id="poznamka" name="poznamka" rows="4"></textarea>
+      <label for="zprava">Popiš svou představu nebo vzkaz:</label>
+      <textarea id="zprava" name="zprava" rows="5"></textarea>
 
-      <button type="submit" class="button">Odeslat objednávku</button>
+      <button type="submit" class="button">Odeslat</button>
     </form>
-  </section>
 
-  <section id="blog">
-    <h2>Blog</h2>
-    <p>Zde najdeš postřehy ze zákulisí tvorby, nápady a úvahy, které doprovází vznik této knihy.</p>
-    <p><strong>23. 5. 2025:</strong> Dokončena poslední kapitola – „Někdy je ticho hlasitější než slova“.</p>
-    <p><strong>15. 5. 2025:</strong> Předčítání na čtenářském večeru v kavárně Lavazza bylo nečekaně emotivní. Děkuji všem, kdo dorazili!</p>
-  </section>
+    <script>
+      function odeslatEmail() {
+        const jmeno = document.getElementById('jmeno').value;
+        const email = document.getElementById('email').value;
+        const typ = document.getElementById('typ').value;
+        const zprava = document.getElementById('zprava').value;
 
-  <section id="recenze">
-    <h2>Recenze čtenářů</h2>
-    <blockquote>
-      „Básně jsou syrové, pravdivé a přitom jemné. Skvělý dar pro duši.“ – Jana M.
-    </blockquote>
-    <blockquote>
-      „Tahle sbírka mi pomohla najít vlastní hlas. Děkuju!“ – Tomáš Z.
-    </blockquote>
+        const subject = encodeURIComponent("Objednávka – " + typ);
+        const body = encodeURIComponent("Jméno: " + jmeno + "\nE-mail: " + email + "\n\nTyp objednávky: " + typ + "\n\nZpráva:\n" + zprava);
+
+        window.location.href = "mailto:stonesilver@seznam.cz?subject=" + subject + "&body=" + body;
+      }
+    </script>
   </section>
 
   <footer>
@@ -294,5 +304,7 @@ jako ten pták…<br>
   </footer>
 </body>
 </html>
+
+
 
 
