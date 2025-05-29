@@ -271,43 +271,22 @@ jako ten pták…<br>
 
  <section id="kontakt">
   <h2>Kontakt</h2>
-  <p>Pokud máš dotazy nebo zájem o spolupráci, napiš mi na:</p>
-  <p>
-    <strong id="email">stonesilver@seznam.cz</strong>
-    <button onclick="copyEmail()" class="button">Kopírovat e-mail</button>
-    <button onclick="toggleQR()" class="button">Zobrazit QR kód</button>
-  </p>
-  <div id="qr-container" style="display: none; margin-top: 1rem;"></div>
+  <p>Pokud máš dotaz, přání nebo mi chceš něco vzkázat, napiš mi přes formulář níže:</p>
 
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
-  <script>
-    function copyEmail() {
-      const email = document.getElementById('email').textContent;
-      navigator.clipboard.writeText(email)
-        .then(() => alert("E-mail zkopírován: " + email))
-        .catch(() => alert("Nepodařilo se zkopírovat e-mail."));
-    }
+  <form action="https://formspree.io/f/mwpogdnv" method="POST">
+    <label for="jmeno">Jméno:</label>
+    <input type="text" id="jmeno" name="jmeno" required>
 
-    function toggleQR() {
-      const qrContainer = document.getElementById('qr-container');
-      const email = document.getElementById('email').textContent;
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-      if (qrContainer.style.display === 'none') {
-        qrContainer.style.display = 'block';
-        qrContainer.innerHTML = '';
-        QRCode.toCanvas(email, { width: 150 }, function (err, canvas) {
-          if (err) {
-            qrContainer.innerText = "Nepodařilo se vygenerovat QR kód.";
-            return;
-          }
-          qrContainer.appendChild(canvas);
-        });
-      } else {
-        qrContainer.style.display = 'none';
-      }
-    }
-  </script>
+    <label for="zprava">Zpráva:</label>
+    <textarea id="zprava" name="zprava" rows="5" required></textarea>
+
+    <button type="submit" class="button">Odeslat vzkaz</button>
+  </form>
 </section>
+
 
 <section id="podpora">
   <h2>Podpoř mě</h2>
@@ -318,9 +297,7 @@ jako ten pták…<br>
     <a href="https://www.paypal.me/fonlord" target="_blank" class="button">
       💖 Přispět přes PayPal
     </a>
-    <a href="mailto:stonesilver@seznam.cz?subject=Chci%20podpořit%20vaši%20tvorbu" class="button" style="margin-left: 10px;">
-      ✉️ Napiš mi
-    </a>
+   
   </div>
 
   <p style="margin-top: 10px;">Díky, že podporuješ poezii a nezávislou tvorbu. 🙏</p>
