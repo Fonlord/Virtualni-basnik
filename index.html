@@ -273,22 +273,28 @@ jako ten pták…<br>
     <h2>Kontakt</h2>
     <p>Pokud máš dotazy nebo zájem o spolupráci, napiš mi na <a href="mailto:stonesilver@seznam.cz">stonesilver@seznam.cz</a>
   
-  <section id="formular">
-    <h2>Objednávkový formulář</h2>
-    <p>Chceš si objednat e-knihu, básničku nebo osobní text? Vyplň formulář a já se ti ozvu zpět.</p>
-   <form action="https://formspree.io/f/mwpogdnv" method="POST">
-      <label for="jmeno">Jméno:</label>
-      <input type="text" id="jmeno" name="jmeno" required>
+ <section id="objednavka">
+  <h2>Objednávka</h2>
+  <form action="https://formspree.io/f/mwpogdnv" method="POST">
+    <label for="name">Jméno a příjmení:</label>
+    <input type="text" id="name" name="name" required>
 
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-      <label for="typ">Co chceš objednat?</label>
-      <select id="typ" name="typ" required>
-        <option value="e-kniha">E-kniha</option>
-        <option value="basen">Báseň na přání</option>
-        <option value="text">Text písně</option>
-      </select>
+    <label for="typ">Co si přejete?</label>
+    <select id="typ" name="typ">
+      <option value="kniha">Kniha</option>
+      <option value="báseň">Báseň na přání</option>
+      <option value="text">Text k hudbě</option>
+    </select>
+
+    <label for="poznamka">Poznámka:</label>
+    <textarea id="poznamka" name="poznamka" rows="4"></textarea>
+
+    <button type="submit" class="button">Odeslat objednávku</button>
+  </form>
+
 
       <label for="zprava">Popiš svou představu nebo vzkaz:</label>
       <textarea id="zprava" name="zprava" rows="5"></textarea>
