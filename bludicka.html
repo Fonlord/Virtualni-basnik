@@ -1,13 +1,92 @@
-<!DOCTYPE html>
-<html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Píseň Bludička a příběh jejího vzniku."/>
   <title>Bludička | Život je jako pocukrovaný citron</title>
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #e4c49c;
+      color: #2c1b0f;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #d4a76a;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 4px dotted #aa8052;
+    }
+    header h1 {
+      font-family: 'Amatic SC', cursive;
+      font-size: 3.2rem;
+      margin: 0;
+    }
+    nav {
+      background-color: #c99b65;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #2c1b0f;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    article {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px dotted #aa8052;
+    }
+    h2 {
+      font-family: 'Amatic SC', cursive;
+      font-size: 2.2rem;
+      margin-top: 0;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    time {
+      font-size: 0.9rem;
+      color: #5c4033;
+    }
+    footer {
+      background-color: #c99b65;
+      text-align: center;
+      padding: 1rem;
+      border-top: 4px dotted #aa8052;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      main {
+        padding: 1.2rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-<body>
 
   <header>
     <h1>Bludička</h1>
